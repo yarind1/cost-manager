@@ -21,13 +21,10 @@ app.use(bodyParser.json());
 // Connect to MongoDB Atlas
 
 require('dotenv').config(); // Loads environment variables from .env into process.env
-mongoose
-    .connect(process.env.MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log("✅ MongoDB connected successfully"))
     .catch((err) => console.error("❌ MongoDB connection error:", err));
+
 
 // Mount the routes under /api
 app.use('/api', costRoutes);
