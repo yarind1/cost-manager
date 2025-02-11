@@ -3,6 +3,8 @@ const express = require('express');
 const router = express.Router();
 const Cost = require('../models/cost');
 const ComputedReport = require('../models/computedReport');
+const User = require('../models/user');
+
 
 /**
  * GET /api/report
