@@ -20,6 +20,13 @@ router.get('/report', async (req, res) => {
         const targetYear = Number(year);
         const targetMonth = Number(month);
 
+        // **User Validation:**
+        // Check if a user with the given userId exists in the database.
+        const user = await User.findOne({ id: userId });
+        if (!user) {
+            // If no such user is found, return a 404 error.
+            return res.status(404).json({ error: 'User not found.' });
+        }
         // Determine the current date info
         const now = new Date();
         const currentYear = now.getFullYear();
