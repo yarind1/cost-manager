@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// מגדיר סכמה לדוחות שמורים ע"י הקונסטרקטור של מונגוס סכמה
+// .מגדיר סכמה לדוחות שמורים ע"י הקונסטרקטור של מונגוס סכמה
 const computedReportSchema = new mongoose.Schema({
     userid: { type: Number, required: true },
     year: { type: Number, required: true },
